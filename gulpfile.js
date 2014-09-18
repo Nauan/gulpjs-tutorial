@@ -1,3 +1,4 @@
+// Define variables to the GulpJS and your GulpJS installed plugins
 var gulp    = require('gulp'),
 minifycss   = require('gulp-minify-css'),
 uglify      = require('gulp-uglify'),
@@ -7,7 +8,9 @@ del         = require('del'),
 livereload  = require('gulp-livereload'),
 autoprefix  = require('gulp-autoprefixer');
 
-//Styles tasks
+// Make the tasks using the plugins installed
+
+// Styles tasks
 gulp.task('styles', function() {
   gulp.src('src/css/*.css')
   .pipe(minifycss())
@@ -17,7 +20,7 @@ gulp.task('styles', function() {
   .pipe(livereload());
 });
 
-//Scripts tasks
+// Scripts tasks
 gulp.task('scripts', function() {
   gulp.src('src/js/*.js')
   .pipe(uglify())
@@ -26,7 +29,7 @@ gulp.task('scripts', function() {
   .pipe(livereload());
 });
 
-//Images tasks
+// Images tasks
 gulp.task('img', function() {
   gulp.src('src/img/**/*')
   .pipe(imagemin())
@@ -34,12 +37,12 @@ gulp.task('img', function() {
   .pipe(livereload());
 });
 
-//Clean files
+// Clean files
 gulp.task('clean', function(cb) {
   del(['build/css', 'build/js', 'build/img'], cb)
 });
 
-//Watch task
+// Watch task
 gulp.task('watch', function() {
   var server = livereload();
   gulp.watch('src/css/*.css', ['styles']);
@@ -47,5 +50,7 @@ gulp.task('watch', function() {
   gulp.watch('src/img/*', ['img']);
 });
 
-//Default task
+// The task that you've named of 'default' (like the one bellow), will run with the command: gulp
+
+// Default task
 gulp.task('default', ['clean', 'styles', 'scripts', 'img', 'watch']);
