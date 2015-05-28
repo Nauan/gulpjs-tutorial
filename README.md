@@ -1,4 +1,4 @@
-After following the steps bellow, see the gulpfile.js on this repository to understand how to setup your own.
+After following the steps bellow, see the gulpfile.js on this repository (https://github.com/Nauan/gulpjs-tutorial/blob/master/gulpfile.js) to understand how to setup your own.
 
 1. Install NodeJS and NPM (Node Package Manager): http://nodejs.org/download/
 2. Install GulpJS (globally): run "npm install gulp -g"
